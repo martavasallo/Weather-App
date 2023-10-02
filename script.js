@@ -5,6 +5,8 @@ const city = document.getElementById('city');
 const date = document.getElementById('date');
 const temperature = document.getElementById('temperature');
 const description = document.getElementById('description');
+const icon = document.getElementById('icon');
+const currentLocation = document.getElementById('currentLocation');
 
 
 const fetchWeatherByCity = (event) => {
@@ -21,16 +23,16 @@ const fetchWeatherByCity = (event) => {
 };
 
 const fectchWeatherByCoordinates = (latitude, longitude) => {
-  const urlCoordinates = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`
+  const urlCoordinates = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}&units=metric`
   fetch(urlCoordinates)
   .then(response => response.json())
   .then(showWeather)
 };
 
 const showWeather = (data) => {
-  console.log(data);
+  // console.log(data);
   city.innerText = data.name;
-  temperature.innerText = `${Math.round(data.main.temp - 273.15)}°C`;
+  temperature.innerText = `${Math.round(data.main.temp)}°C`;
   description.innerText = data.weather[0].description;
   icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
@@ -42,6 +44,15 @@ const showWeather = (data) => {
   date.innerText = formattedDate;
 }
 
+const fetchCurrentPosition = (event) => {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition((data) => {
+    fectchWeatherByCoordinates(data.coords.latitude, data.coords.longitude)
+  })
+}
+
+
 
 const form = document.querySelector('form');
 searchForm.addEventListener('submit', fetchWeatherByCity);
+currentLocation.addEventListener('click', fetchCurrentPosition);
