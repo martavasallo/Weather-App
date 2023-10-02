@@ -23,21 +23,37 @@
               <a href="" id="currentLocation" class="position"><i class="bi bi-geo-alt"></i></a>
               <input type="submit" value="Get the weather" class="btn btn-primary ms-3">
             </form>
-
-            <div class="card-body">
-              <h1>Weather in <span id="city"> <!-- TODO: CITY NAME --> </span></h1>
-              <h3 id="date" class="text-secondary"><!-- TODO: DATE --></h3>
-              <div id="weather">
-                <p id="description"><!-- TODO: DESCRIPTION --></p>
-                <div class="d-flex">
-                  <img src="" alt="Weather Icon" id="icon">
-                  <h2 id="temperature"><!-- TODO: TEMPERATURE --></h2>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+      </div>
 
+      <div class="container">
+        <div class="row">
+
+            <div class="d-flex justify-content-between">
+              <div>
+                <h2><span id="city"> <!-- CITY --> </span></h2>
+                <h6><span id="country"><!-- COUNTRY --> </span></h6>
+              </div>
+              <h5 id="date" class="text-secondary"><!-- DATE --></h5>
+            </div>
+
+            <div class="d-flex justify-content-center">
+
+              <div id="weather">
+                <div class="d-flex">
+                  <img src="" alt="" id="icon">
+                  <h2 id="temperature"><!-- TEMPERATURE --></h2>
+                </div>
+                <h4 id="main"> <!-- MAIN WEATHER --> </h4>
+                <p id="description"><!-- DESCRIPTION --></p>
+              </div>
+
+            </div>
+
+
+
+        </div>
       </div>
     </main>
 
