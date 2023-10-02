@@ -1,14 +1,22 @@
 const APIKEY = '376628fc58a96623637f47269d74581f';
 
 const input = document.getElementById('input');
+const currentLocation = document.getElementById('currentLocation');
+
 const date = document.getElementById('date');
+const time = document.getElementById('time');
+
 const city = document.getElementById('city');
 const country = document.getElementById('country');
 const temperature = document.getElementById('temperature');
 const main = document.getElementById('main');
 const description = document.getElementById('description');
+const wind = document.getElementById('wind');
+const humidity = document.getElementById('humidity');
+const sunrise = document.getElementById('sunrise');
+const sunset = document.getElementById('sunset');
+
 const icon = document.getElementById('icon');
-const currentLocation = document.getElementById('currentLocation');
 
 
 const fetchWeatherByCity = (event) => {
@@ -32,38 +40,51 @@ const fectchWeatherByCoordinates = (latitude, longitude) => {
 };
 
 const showWeather = (data) => {
-  console.log(data.sys.country);
-  // CITY NAME
+  console.log(data);
+
+  // City name
   city.innerText = data.name;
 
-  // COUNTRY
+  // Country
   country.innerText = data.sys.country
 
-  // TEMPERATURE
+  // Temperature
   temperature.innerText = `${Math.round(data.main.temp)}°C`;
 
-  // MAIN
+  // Main
   main.innerText = data.weather[0].main;
 
-  // DESCCRIPTION
-  const descriptionText = data.weather[0].description;
-  const descriptionCapitalized = descriptionText.charAt(0).toUpperCase() + descriptionText.slice(1);
-  description.innerText = descriptionCapitalized;
+  // Description
+  description.innerText = data.weather[0].description;
 
-  // ICON
+  // Icon
   icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
-  // TIME
+  // Time
   const today = new Date();
   const localOffset = data.timezone + today.getTimezoneOffset() * 60;
   const localDate = new Date(today.setUTCSeconds(localOffset));
-
-  const hour = localDate.getHours().toString().padStart(2, '0');
-  const minute = localDate.getMinutes().toString().padStart(2, '0');
-
-  const formattedTime = `Local time ${hour}:${minute}`;
+  const formattedTime = localDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
   date.innerText = formattedTime;
+  time.innerHTML = 'Local time'
 
+  // Humidity
+  humidity.innerHTML = '<i class="bi bi-droplet-fill"></i>' + " " + data.main.humidity + "%"
+
+  // Wind
+  const windMeterSecond = data.wind.speed
+  const windKmH = Math.round(windMeterSecond * 3.6)
+  wind.innerHTML = '<i class="bi bi-wind"></i>' + " " + windKmH + " km/h";
+
+  // Sunrise
+  const sunriseTime = new Date(data.sys.sunrise * 1000)
+  .toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+  sunrise.innerHTML = '<i class="bi bi-brightness-alt-high-fill"></i>' + " " + sunriseTime;
+
+  // Sunset
+  const sunsetTime = new Date(data.sys.sunset * 1000)
+  .toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+  sunset.innerHTML = '<i class="bi bi-moon-fill"></i>' + " " + sunsetTime;
 }
 
 const fetchCurrentPosition = (event) => {
@@ -73,6 +94,7 @@ const fetchCurrentPosition = (event) => {
   })
 }
 
+// Form submission event listener
 const form = document.querySelector('form');
 searchForm.addEventListener('submit', fetchWeatherByCity);
 currentLocation.addEventListener('click', fetchCurrentPosition);

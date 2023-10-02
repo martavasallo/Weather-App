@@ -31,25 +31,38 @@
         <div class="row">
 
             <div class="d-flex justify-content-between">
-              <div>
-                <h2><span id="city"> <!-- CITY --> </span></h2>
-                <h6><span id="country"><!-- COUNTRY --> </span></h6>
+              <div class="text-start">
+                <h4><span id="city"> <!-- CITY --> </span></h4>
+                <h6><span id="country" class="text-secondary"><!-- COUNTRY --> </span></h6>
               </div>
-              <h5 id="date" class="text-secondary"><!-- DATE --></h5>
+              <div class="text-end">
+                <h4 id="date"><!-- DATE --></h4>
+                <h6><span id="time" class="text-secondary"><!-- TIME --> </span></h6>
+              </div>
             </div>
 
             <div class="d-flex justify-content-center">
-
               <div id="weather">
-                <div class="d-flex">
-                  <img src="" alt="" id="icon">
-                  <h2 id="temperature"><!-- TEMPERATURE --></h2>
+                <div class="text-center">
+                  <h1 id="temperature"><!-- TEMPERATURE --></h1>
+                  <h4 id="main" > <!-- MAIN WEATHER --> </h4>
+                  <p id="description" class="text-capitalize"><!-- DESCRIPTION --></p>
                 </div>
-                <h4 id="main"> <!-- MAIN WEATHER --> </h4>
-                <p id="description"><!-- DESCRIPTION --></p>
               </div>
-
             </div>
+
+            <div class="d-flex justify-content-between">
+              <div>
+                <p id="wind"></p>
+                <p id="humidity"></p>
+                <p id="sunrise"></p>
+                <p id="sunset"></p>
+              </div>
+              <div>
+                <img src="" alt="" id="icon">
+              </div>
+            </div>
+
 
 
 
