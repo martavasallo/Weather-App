@@ -63,9 +63,6 @@ const showWeather = (data) => {
   const weatherDescription = data.weather[0].description;
   description.innerText = weatherDescription;
 
-  // Icon
-  // icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-
   // Time
   const today = new Date();
   const localOffset = data.timezone + today.getTimezoneOffset() * 60;
@@ -126,14 +123,14 @@ const showWeather = (data) => {
 
   // Footer
   footer.style.display = 'block';
-}
+};
 
 const fetchCurrentPosition = (event) => {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition((data) => {
     fectchWeatherByCoordinates(data.coords.latitude, data.coords.longitude)
   })
-}
+};
 
 // Form submission event listener
 const form = document.querySelector('form');
