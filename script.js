@@ -16,7 +16,9 @@ const humidity = document.getElementById('humidity');
 const sunrise = document.getElementById('sunrise');
 const sunset = document.getElementById('sunset');
 
+const card = document.querySelector('.card');
 const icon = document.getElementById('icon');
+const footer = document.querySelector('.footer');
 
 
 const fetchWeatherByCity = (event) => {
@@ -40,7 +42,10 @@ const fectchWeatherByCoordinates = (latitude, longitude) => {
 };
 
 const showWeather = (data) => {
-  console.log(data);
+  // console.log(data);
+
+  // Card
+  card.style.display = 'block';
 
   // City name
   city.innerText = data.name;
@@ -55,10 +60,11 @@ const showWeather = (data) => {
   main.innerText = data.weather[0].main;
 
   // Description
-  description.innerText = data.weather[0].description;
+  const weatherDescription = data.weather[0].description;
+  description.innerText = weatherDescription;
 
   // Icon
-  icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+  // icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
   // Time
   const today = new Date();
@@ -85,6 +91,41 @@ const showWeather = (data) => {
   const sunsetTime = new Date(data.sys.sunset * 1000)
   .toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
   sunset.innerHTML = '<i class="bi bi-moon-fill"></i>' + " " + sunsetTime;
+
+  // Icons
+  const hour = parseInt(formattedTime.split(':')[0]);
+  let iconSrc = '';
+
+  switch (true) {
+    case weatherDescription.includes('clear'):
+      iconSrc = (hour >= 6 && hour < 20) ? '/icons/clear-day.gif' : '/icons/clear-night.gif';
+      break;
+    case weatherDescription.includes('clouds'):
+      iconSrc = '/icons/clouds.gif';
+      break;
+    case weatherDescription.includes('thunderstorm'):
+      iconSrc = '/icons/thunderstorm.gif';
+      break;
+    case weatherDescription.includes('drizzle'):
+      iconSrc = '/icons/drizzle.gif';
+      break;
+    case weatherDescription.includes('rain'):
+      iconSrc = '/icons/rain.gif';
+      break;
+    case weatherDescription.includes('snow'):
+      iconSrc = '/icons/snow.gif';
+      break;
+    default:
+      iconSrc = '/icons/atmosphere.gif';
+      break;
+  }
+
+  icon.src = iconSrc;
+  icon.style.display = 'inline-block';
+
+
+  // Footer
+  footer.style.display = 'block';
 }
 
 const fetchCurrentPosition = (event) => {

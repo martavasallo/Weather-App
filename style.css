@@ -1,3 +1,7 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
 
 .position {
   position: relative;
@@ -6,4 +10,73 @@
   margin-top: 6px;
 }
 
+.card {
+  display: none;
+  padding: 26px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 16px;
+  background-color: #ffffff;
 
+}
+#temperature {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+#weather {
+  margin-top: 9px;
+}
+
+#icon {
+  display: none;
+  margin-right: 36px;
+  margin-top: 9px;
+}
+
+.information p {
+  margin-bottom: 5px;
+}
+
+.btn-primary {
+  background-color: #49cace;
+  border-color: #49cace;
+}
+
+.btn-primary:hover {
+  background-color: #59c0c3;
+  border-color: #59c0c3;
+}
+
+a {
+  color: #49cace;
+}
+
+a:hover {
+  color: #59c0c3;
+}
+
+.form-control:focus {
+  /* border-color: #59c0c3; */
+  box-shadow: 0 0 0 0.2rem rgba(89, 192, 195, 0.25);
+}
+
+#country {
+  color: grey;
+}
+
+#time {
+  color: grey;
+}
+
+.footer {
+  display: none;
+  text-align: center;
+  position: fixed;
+  bottom: 0;  width: 100%;
+  padding: 10px;
+}
+
+.footer a {
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
