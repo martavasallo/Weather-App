@@ -1,7 +1,9 @@
 # Weather App
 
 ## Demo
-You can try the app live at [Demo Link](https://martavasallo.github.io/Weather-App/).
+## Demo
+You can try the app live at <a href="https://martavasallo.github.io/Weather-App/" target="_blank">Weather App Demo Link</a>.
+
 
 ![Weather App Screenshot](/images/app_screenshot.png)
 
