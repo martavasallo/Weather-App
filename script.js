@@ -98,7 +98,7 @@ const showWeather = (data) => {
       iconSrc = (hour >= 6 && hour < 20) ? '/icons/clear-day.gif' : '/icons/clear-night.gif';
       break;
     case weatherDescription.includes('clouds'):
-      iconSrc = '/icons/clouds.gif';
+      iconSrc = './icons/clouds.gif';
       break;
     case weatherDescription.includes('thunderstorm'):
       iconSrc = '/icons/thunderstorm.gif';
