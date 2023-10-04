@@ -24,7 +24,7 @@ const footer = document.querySelector('.footer');
 const fetchWeatherByCity = (event) => {
   event.preventDefault();
   const inputCity = input.value;
-  const urlCityName = `http://api.openweathermap.org/geo/1.0/direct?q=${inputCity}&appid=${APIKEY}`
+  const urlCityName = `https://api.openweathermap.org/geo/1.0/direct?q=${inputCity}&appid=${APIKEY}`
   fetch(urlCityName)
   .then(response => response.json())
   .then(data => {
