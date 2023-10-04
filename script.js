@@ -95,25 +95,25 @@ const showWeather = (data) => {
 
   switch (true) {
     case weatherDescription.includes('clear'):
-      iconSrc = (hour >= 6 && hour < 20) ? '/icons/clear-day.gif' : '/icons/clear-night.gif';
+      iconSrc = (hour >= 6 && hour < 20) ? './icons/clear-day.gif' : './icons/clear-night.gif';
       break;
     case weatherDescription.includes('clouds'):
       iconSrc = './icons/clouds.gif';
       break;
     case weatherDescription.includes('thunderstorm'):
-      iconSrc = '/icons/thunderstorm.gif';
+      iconSrc = './icons/thunderstorm.gif';
       break;
     case weatherDescription.includes('drizzle'):
-      iconSrc = '/icons/drizzle.gif';
+      iconSrc = './icons/drizzle.gif';
       break;
     case weatherDescription.includes('rain'):
-      iconSrc = '/icons/rain.gif';
+      iconSrc = './icons/rain.gif';
       break;
     case weatherDescription.includes('snow'):
-      iconSrc = '/icons/snow.gif';
+      iconSrc = './icons/snow.gif';
       break;
     default:
-      iconSrc = '/icons/atmosphere.gif';
+      iconSrc = './icons/atmosphere.gif';
       break;
   }
 
