@@ -1,5 +1,8 @@
 # Weather App
 
+## Demo
+You can try the app live at [Demo Link](https://martavasallo.github.io/Weather-App/).
+
 ![Weather App Screenshot](/images/app_screenshot.png)
 
 ## Introduction
@@ -34,6 +37,3 @@ The Weather App is a simple web application that allows users to check the curre
 ## Acknowledgments
 
 - Animated weather icons provided by [Freepik](https://www.flaticon.com/free-animated-icons/) at Flaticon.
-
-<!-- ## Demo
-You can try the app live at [Demo Link](https://your-demo-link.com). -->
