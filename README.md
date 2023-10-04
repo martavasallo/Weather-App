@@ -1,40 +1,39 @@
-# weather-forecast
 # Weather App
 
-![Weather App Screenshot](link-to-screenshot.png)
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Demo](#demo)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Built With](#built-with)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+![Weather App Screenshot](/images/app_screenshot.png)
 
 ## Introduction
 The Weather App is a simple web application that allows users to check the current weather conditions for a specific city or their current location. It provides real-time weather information such as temperature, weather description, humidity, wind speed, and sunrise/sunset times.
 
 ## Features
-- Get current weather data for any city.
-- Detect user's current location and display local weather.
-- Display temperature in Celsius.
-- Show weather icons based on the current weather condition and time of day.
 
-## Demo
-You can try the app live at [Demo Link](https://your-demo-link.com).
+- **Weather by City**: Users can enter the name of a city, and the app will fetch and display the current weather conditions for that city, including temperature, weather description, wind speed, humidity, sunrise, sunset, and an appropriate weather icon.
 
-## Getting Started
-To run this project locally or contribute to it, follow the instructions below.
+- **Geolocation**: Users can click on the "Current Location" button to automatically fetch weather data for their current geographic location based on their device's GPS coordinates.
 
-### Prerequisites
-- Node.js and npm installed on your machine.
+- **Timezone Support**: The app displays local time for the selected location, taking into account the timezone offset.
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/weather-app.git
+- **Responsive Design**: The app is designed to be responsive, providing a seamless experience on both desktop and mobile devices.
+
+- **Animated Weather Icons**: The app includes animated weather icons to visually represent the current weather conditions.
+
+## Technologies Used
+
+- **HTML**: The app's structure and content are built using HTML.
+
+- **CSS**: Cascading Style Sheets (CSS) are used for styling and layout.
+
+- **JavaScript**: JavaScript is used for the interactive features of the app, including fetching weather data from the OpenWeatherMap API, handling user input, and dynamically updating the UI.
+
+- **OpenWeatherMap API**: The app utilizes the OpenWeatherMap API to retrieve weather data for the specified location.
+
+- **Bootstrap**: Bootstrap is used for styling and layout components to create a clean and modern interface.
+
+- **Bootstrap Icons**: Bootstrap Icons are used for various icons in the app's user interface.
+
+## Acknowledgments
+
+- Animated weather icons provided by [Freepik](https://www.flaticon.com/free-animated-icons/) at Flaticon.
+
+<!-- ## Demo
+You can try the app live at [Demo Link](https://your-demo-link.com). -->
