@@ -47,6 +47,12 @@ body {
   border-color: #49a5a8;
 }
 
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(89, 192, 195, 0.25);
+  background-color: #49a5a8;
+  border-color: #49a5a8;
+}
+
 a {
   color: #49cace;
 }
