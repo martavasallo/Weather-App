@@ -32,6 +32,7 @@ const fetchWeatherByCity = (event) => {
     const longitude = data[0].lon
     fectchWeatherByCoordinates(latitude, longitude);
   })
+  input.value = ""
 };
 
 const fectchWeatherByCoordinates = (latitude, longitude) => {
